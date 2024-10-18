@@ -1,1 +1,1 @@
-{"root":["./src/vite-env.d.ts","./src/app/app.tsx","./src/app/main.tsx"],"version":"5.6.3"}
+{"root":["./src/vite-env.d.ts","./src/app/app.tsx","./src/app/main.tsx","./src/common/components/zoomcontrol/zoomcontrol.tsx","./src/common/components/zoomcontrol/index.ts"],"version":"5.6.3"}

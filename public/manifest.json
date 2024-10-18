@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Zoom Manager",
+  "version": "1.0",
+  "description": "Auto adjusts website zoom based on monitor size ",
+  "permissions": ["storage", "activeTab", "tabs", "system.display"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
