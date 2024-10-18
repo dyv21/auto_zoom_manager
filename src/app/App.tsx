@@ -11,7 +11,11 @@ function App() {
       <h1>Zoom Manager</h1>
       <p>Current Zoom <b>{currentZoom}%</b></p>
       <ZoomControl currentZoom={currentZoom} onZoomChange={setCurrentZoom} />
-      <div>QuickZoom buttons</div>
+      <div>
+        <button onClick={()=> setCurrentZoom(100)}>100%</button>
+        <button onClick={()=> setCurrentZoom(115)}>115%</button>
+        <button onClick={()=> setCurrentZoom(125)}>125%</button>
+      </div>
       <div> ScreenSizeZoomSettings</div>
     </div>
   )
