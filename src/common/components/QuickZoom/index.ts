@@ -1,1 +1,0 @@
-export {QuickZoom} from './QuickZoom';
