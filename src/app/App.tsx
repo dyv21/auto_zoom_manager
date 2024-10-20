@@ -11,10 +11,10 @@ export type ScreenSizeZoom  = {
 function App() {
   const [currentZoom, setCurrentZoom] = useState<number>(100);
   const [screenSizeZooms, setScreenSizeZooms] = useState<ScreenSizeZoom[]>([
-    { size: 'Small (< 1366px)', zoom: 90 },
-    { size: 'Medium (1366px - 1920px)', zoom: 100 },
-    { size: 'Large (1921px - 2560px)', zoom: 115 },
-    { size: 'Extra Large (> 2560px)', zoom: 125 },
+    { size: 'Small < 1366px', zoom: 90 },
+    { size: 'Medium 1366px - 1920px', zoom: 100 },
+    { size: 'Large 1921px - 2560px', zoom: 115 },
+    { size: 'Extra Large > 2560px', zoom: 125 },
   ]);
 
   useEffect(() => {

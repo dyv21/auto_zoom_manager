@@ -15,19 +15,20 @@ export const ScreenSizeZoomSettings: React.FC<{ screenSizeZooms: ScreenSizeZoom[
         <span className="collapse-icon">{isCollapsed ? '▼' : '▲'}</span>
       </p>
 
-      {!isCollapsed && screenSizeZooms.map((item, index) => (
-          <div key={index} className="screen-size-zoom-item">
-            <span>{item.size}</span>
-            <input
-              type="number"
-              min="50"
-              max="200"
-              value={item.zoom}
-              onChange={(e) => onScreenSizeZoomChange(index, Number(e.target.value))}
-            />
-            <span>%</span>
-          </div>
-        ))}
+     <div className="screen-size-zoom-item-wrapper">
+       {!isCollapsed && screenSizeZooms.map((item, index) => (
+         <div key={index} className="screen-size-zoom-item">
+           <span>{item.size}</span>
+           <input
+             type="number"
+             min="50"
+             max="200"
+             value={item.zoom}
+             onChange={(e) => onScreenSizeZoomChange(index, Number(e.target.value))}
+           />
+         </div>
+       ))}
+     </div>
     </div>
   );
 };

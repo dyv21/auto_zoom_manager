@@ -54,15 +54,26 @@ button:hover {
 }
 
 .screen-size-zooms {
-  width: 100%;
+  width: 80%;
   margin-bottom: 16px;
 }
 
 .screen-size-zoom-item {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
+
+  &::after {
+    content: '%';
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
 }
 
 .screen-size-zoom-item input {
