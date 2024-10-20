@@ -5,7 +5,17 @@
   "description": "Auto adjusts website zoom based on monitor size ",
   "permissions": ["storage", "activeTab", "tabs", "system.display"],
   "action": {
-    "default_popup": "index.html"
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icons/icon_16.png",
+      "48": "icons/icon_48.png",
+      "128": "icons/icon_128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon_16.png",
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
   },
   "background": {
     "service_worker": "background.js",
