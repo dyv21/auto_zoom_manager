@@ -1,5 +1,5 @@
 import './App.css'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {ZoomControl, QuickZoom, ScreenSizeZoomSettings} from "../common/components";
 
 export type ScreenSizeZoom  = {
@@ -17,6 +17,35 @@ function App() {
     { size: 'Extra Large (> 2560px)', zoom: 125 },
   ]);
 
+  useEffect(() => {
+    const fetchInitialData = async () => {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (tab?.url) {
+        const zoom = await chrome.tabs.getZoom(tab.id!);
+        setCurrentZoom(Math.round(zoom * 100));
+      }
+
+      chrome.storage.sync.get(['screenSizeZooms'], (data) => {
+        if (data.screenSizeZooms) {
+          setScreenSizeZooms(data.screenSizeZooms);
+        }
+      });
+    };
+    fetchInitialData();
+  }, []);
+
+  const handleZoomChange = async (newZoom: number) => {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (tab?.id) {
+      await chrome.tabs.setZoom(tab.id, newZoom / 100);
+      setCurrentZoom(newZoom);
+    }
+  };
+
+
+  const quickZoom = (zoomLevel: number) => {
+    handleZoomChange(zoomLevel);
+  };
 
   const handleScreenSizeZoomChange = (index: number, newZoom: number) => {
     const updatedZooms = screenSizeZooms.map((item, i) =>
@@ -31,9 +60,9 @@ function App() {
     <div className="app">
       <h1>Auto Zoom Manager</h1>
       <p>Current Zoom <b>{currentZoom}%</b></p>
-      <ZoomControl currentZoom={currentZoom} onZoomChange={setCurrentZoom} />
-      <QuickZoom onQuickZoom={setCurrentZoom} />
-      <div> <ScreenSizeZoomSettings screenSizeZooms={screenSizeZooms} onScreenSizeZoomChange={handleScreenSizeZoomChange} /></div>
+      <ZoomControl currentZoom={currentZoom} onZoomChange={quickZoom} />
+      <QuickZoom onQuickZoom={quickZoom} />
+      <ScreenSizeZoomSettings screenSizeZooms={screenSizeZooms} onScreenSizeZoomChange={handleScreenSizeZoomChange} />
     </div>
   )
 }

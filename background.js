@@ -29,7 +29,8 @@ function setZoomForTab(tabId, zoom) {
 
 // Функция для настройки зума в зависимости от размеров экрана
 async function adjustZoom(tabId, forcedWidth) {
-    const data = await chrome.storage.sync.get(['screenSizeZooms']);
+    const data = await chrome.storage.sync.get(['screenSizeZooms'
+    ]);
     const tab = await chrome.tabs.get(tabId);
 
     if (!tab || !tab.url) return;
