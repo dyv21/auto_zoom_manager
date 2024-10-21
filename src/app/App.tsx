@@ -1,6 +1,6 @@
 import './App.css'
 import {useEffect, useState} from "react";
-import {ZoomControl, QuickZoom, ScreenSizeZoomSettings} from "../common/components";
+import {ZoomControl, QuickZoom, ScreenSizeZoomSettings} from "../components";
 
 export type ScreenSizeZoom  = {
   size: string;

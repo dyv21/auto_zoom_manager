@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {ScreenSizeZoom} from "../../../app/App.tsx";
+import {ScreenSizeZoom} from "../../app/App.tsx";
 
 export const ScreenSizeZoomSettings: React.FC<{ screenSizeZooms: ScreenSizeZoom[], onScreenSizeZoomChange: (index: number, newZoom: number) => void }> = ({ screenSizeZooms, onScreenSizeZoomChange }) => {
   const [isCollapsed, setCollapsed] = useState(true);
