@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Auto Zoom Manager",
-  "version": "1.0",
-  "description": "Automatic Zoom Adjustment Based on Monitor Size",
+  "version": "0.1.1",
+  "description": "Automatically adjusts website zoom based on monitor size, with custom settings and quick controls for multi-monitor setups.",
   "permissions": ["storage", "activeTab", "tabs", "system.display"],
   "action": {
     "default_popup": "index.html"
