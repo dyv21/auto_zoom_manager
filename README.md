@@ -16,10 +16,10 @@
    cd auto_zoom_manager
 2. **Install dependencies:**
    ```bash
-        npm install
+   npm install
 3. **Build the project:**
    ```bash
-      npm run build
+   npm run build
 4. **Load the extension into Chrome:**
    - Open chrome://extensions/.
    - Enable Developer mode.
