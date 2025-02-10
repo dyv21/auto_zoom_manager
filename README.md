@@ -14,18 +14,14 @@
    ```bash
    git clone https://github.com/yourusername/auto_zoom_manager.git
    cd auto_zoom_manager
-
-2 **Install dependencies:**
-  ``bash
-  npm install
-
+2. **Install dependencies:**
+     ```bash
+        npm install
 3. **Build the project:**
-  ``bash
-  npm run build
-
+      ```bash
+      npm run build
 4. **Load the extension into Chrome:**
-   -Open chrome://extensions/.
-   -Enable Developer mode.
-   -Click Load unpacked and select the dist folder.
+-Open chrome://extensions/.
+-Enable Developer mode.
+-Click Load unpacked and select the dist folder.
 
-#Enjoy
